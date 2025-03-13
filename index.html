@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VENOM NETWORK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/ico" href="logo1.ico">
+
+
+
+    <style>
+        html, body {
+            font-family: 'Michroma', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            overflow-x: hidden;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            
+            
+        }
+
+/* Style untuk scrollbar secara keseluruhan */
+::-webkit-scrollbar {
+    width: 10px; /* Lebar scrollbar */
+}
+
+/* Track (jalur scrollbar) */
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Warna background transparan */
+    border-radius: 10px;
+}
+
+/* Thumb (bagian yang bisa digeser) */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #00feba, #5b548a); /* Warna futuristik */
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Hover efek */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #5b548a, #00feba);
+}
+
+
+
+
+
+        .navbar {
+            display: flex;
+            gap: 15px;
+            background: linear-gradient(90deg, #1a1a1a, #0d0d0d);
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: -5px 0 15px rgba(0, 255, 255, 0.2);
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 1000;
+        }
+        .nav-link {
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        .nav-link:hover {
+            background: rgba(0, 255, 255, 0.2);
+            color: #00ffff;
+            box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+            transform: scale(1.05);
+        }
+        .home-section {
+            background: url('kuk.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            text-align: left;
+            padding-left: 3%;
+            padding-top: 20%;
+        }
+        .home-content {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+            max-width: 800px;
+            position: relative;
+        }
+        .home-content h1 {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        .home-content h2 {
+            font-size: 3.5rem;
+            color: #00ffff;
+        }
+        .home-content p {
+            font-size: 0.9rem;
+            margin: 20px 0;
+            text-align: justify;
+        }
+        .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #00ffff;
+    background: transparent;
+    border: 2px solid #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+/* Efek Neon Glow */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 255, 0.2);
+    transition: 0.4s;
+}
+
+.btn:hover::before {
+    left: 0;
+}
+/* Efek Glitch Hover */
+.btn:hover {
+    background: #00ffff;
+    color: #000;
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+    animation: glitch 0.4s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(2px, 2px); }
+    100% { transform: translate(0); }
+}
+
+/* Efek Scan Line */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -100%;
+    width: 150%;
+    height: 300%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+    transform: rotate(25deg);
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+        .services-section {
+            background: linear-gradient(180deg, #000, #0d0d0d);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            width: 80%;
+            height: 150px;
+            background: rgba(0, 255, 255, 0.2);
+            filter: blur(50px);
+            transform: translateX(-50%);
+        }
+        .services-section h2 {
+            font-size: 2rem;
+            color: #00ffff;
+            margin-bottom: 40px;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+        }
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .service {
+            background: linear-gradient(135deg, #1a1a1a, #000);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .service::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background: #00ffff;
+            border-radius: 50%;
+            opacity: 0.6;
+            filter: blur(15px);
+        }
+        .service:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+            transform: translateY(-10px);
+        }
+        .service h3 {
+            font-size: 1.4rem;
+            color: #00ffff;
+            margin-bottom: 15px;
+        }
+        .service p {
+            font-size: 0.9rem;
+        }
+        .powered-by {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            font-size: 1rem;
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+        @media screen and (max-width: 768px) {
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Tetap rata kiri */
+        justify-content: center;
+        text-align: left; /* Pastikan teks rata kiri */
+        padding: 20px;
+        height: auto;
+        min-height: 100vh;
+        overflow: visible; /* Pastikan tidak ada pemotongan */
+        word-wrap: break-word;
+        width: 100%; /* Pastikan tidak ada pemotongan di sisi kanan */
+    }
+    
+    .home-content h1 {
+        font-size: 24px; /* Sesuaikan ukuran agar tidak terlalu besar */
+        line-height: 1.2;
+    }
+    .home-content h2 {
+        font-size: 45px; /* Sesuaikan ukuran agar tidak terlalu besar */
+        
+    }
+
+    .home-content p {
+        font-size: 16px; /* Ukuran teks yang lebih kecil agar lebih responsif */
+    }
+}
+
+        
+/* =========================================================kie nggo mode mobile beroooo */
+        .mobile-menu {
+            display: flex;
+            flex-direction: column;
+            background: #000;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 250px;
+            height: 100vh;
+            padding-top: 60px;
+            transition: right 0.3s ease-in-out;
+            box-shadow: -5px 0 15px rgba(0, 255, 255, 0.5);
+            z-index: 1101;
+            overflow-x: hidden;
+        }
+        .mobile-menu.active {
+            right: 0;
+        }
+        .mobile-menu .nav-link {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        .menu-button {
+            display: none;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1102;
+        }
+        .menu-button.hidden {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                display: none;
+            }
+            .menu-button {
+                display: block;
+            }
+        }
+
+        /* =========================================================ABOUT US BEROOOO */
+
+        .about-us {
+    background: url('kuk2.png') no-repeat center center/cover;
+    padding: 100px 10%;
+    position: relative;
+    color: #00ffff;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-content {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.8);
+    max-width: 850px;
+    text-align: center;
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    
+}
+
+.about-content h2::after {
+    content: "";
+    width: 50%;
+    height: 3px;
+    background: #00ffff;
+    position: absolute;
+    left: 25%;
+    bottom: -5px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+}
+
+.about-content p {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    margin-bottom: 15px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.about-content p:hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 20px #00ffff, 0px 0px 30px #00ffff;
+    transform: scale(1.02);
+}
+
+@keyframes neonGlow {
+    0% {
+        box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0px 0px 30px rgba(0, 255, 255, 1);
+    }
+}
+@media (min-width: 768px) {
+    .about-content {
+        margin-left: 700px;
+    }
+}
+@media (max-width: 768px) {
+    .about-content {
+        font-size: 10px; /* Perkecil ukuran teks */
+    }
+}
+
+        /* =========================================================OUR TEAM BEROOOO */
+
+        .team-section {
+    text-align: center;
+    padding: 60px 5%;
+    background: linear-gradient(180deg, #000, #0d0d0d);
+}
+
+.team-title {
+    font-size: 2rem;
+    color: #00ffff;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    margin-bottom: 30px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+    text-align: center;
+    width: 280px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px #00ffff, 0px 0px 50px #00ffff;
+}
+
+.team-frame {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid #00ffff;
+    box-shadow: 0px 0px 10px #00ffff;
+    background: rgba(0, 255, 255, 0.1);
+}
+
+.team-photo {
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+    border-radius: 8px;
+}
+
+h3 {
+    color: #00ffff;
+    margin-top: 10px;
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 12px;
+}
+
+.contact-button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #000;
+    background: #00ffff;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 10px #00ffff;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.contact-button:hover {
+    background: #00bfbf;
+    transform: scale(1.1);
+}
+
+
+        /* =========================================================SECTION RESOURCES BEROOOO */
+
+/* SECTION RESOURCES */
+.resources-section {
+    text-align: center;
+    background-color: black;
+    padding: 80px 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffff;
+    margin-bottom: 40px;
+}
+
+.resources-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.resource-item {
+    background: rgba(0, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.resource-item:hover {
+    transform: scale(1.05);
+}
+
+.resource-image {
+    width: 100%;
+    max-width: 400px; /* Ukuran default */
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Tombol Lihat Tools */
+.button-container {
+    margin-top: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 18px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    background: linear-gradient(90deg, #00ffff, #0077ff);
+    border: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #0077ff;
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek Hover */
+.cta-button:hover {
+    background: linear-gradient(90deg, #0077ff, #00ffff);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #00ffff, 0 0 50px #0077ff;
+}
+
+/* Efek Cahaya Futuristik */
+.cta-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.5s ease-in-out;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.cta-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+}
+
+/* Animasi Pulsa */
+@keyframes pulsate {
+    0% {
+        box-shadow: 0 0 15px #00ffff, 0 0 30px #0077ff;
+    }
+    50% {
+        box-shadow: 0 0 25px #00ffff, 0 0 50px #0077ff;
+    }
+    100% {
+        box-shadow: 0 0 15px #00ffff, 0 0 30px #0077ff;
+    }
+}
+
+.cta-button {
+    animation: pulsate 2s infinite alternate;
+}
+
+/* Perbesar gambar di tampilan desktop */
+@media (min-width: 1024px) {
+    .resource-image {
+        max-width: 800px; /* Perbesar gambar */
+    }
+}
+
+
+.resources {
+    position: relative;
+    background: linear-gradient(135deg, rgba(0, 10, 20, 0.9), rgba(0, 255, 200, 0.1)); 
+    overflow: hidden;
+}
+
+/* Background Futuristik untuk Section RESOURCES */
+.resources-section {
+    position: relative;
+    background: linear-gradient(135deg, rgba(0, 5, 15, 0.9), rgba(0, 255, 200, 0.1)); 
+    overflow: hidden;
+}
+
+/* Efek Grid Futuristik */
+.resources-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 255, 255, 0.2) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(0, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+/* Efek Cahaya Bergerak */
+.resources-section::after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    width: 150%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.2), transparent);
+    transform: translateX(-50%);
+    animation: moveLight 6s infinite linear;
+    z-index: 0;
+}
+
+@keyframes moveLight {
+    0% {
+        transform: translateX(-50%) translateY(-20px);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateX(-50%) translateY(20px);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateX(-50%) translateY(-20px);
+        opacity: 0.3;
+    }
+}
+
+/* Pastikan semua konten di atas efek background */
+.resources-container,
+.section-title,
+.button-container {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+/* =========================================================SECTION frequntly asked questions BEROOOO */
+
+.faq-section {
+    background-color: #000;
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.faq-title {
+    font-size: 2rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    margin-bottom: 30px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: rgba(0, 255, 255, 0.1);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border-left: 4px solid #00ffff;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+
+.faq-question {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #00ffff;
+    transition: 0.3s;
+}
+
+.faq-answer {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Efek Hover */
+.faq-item:hover {
+    background: rgba(0, 255, 255, 0.2);
+    transform: scale(1.02);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+}
+
+/* Efek Klik */
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    opacity: 1;
+}
+/* Background Futuristik untuk Section FAQ */
+.faq-section {
+    background: linear-gradient(135deg, #000c1f, #002244, #001122);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek Garis Cahaya Bergerak */
+.faq-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(0, 255, 255, 0.1) 0px,
+        rgba(0, 255, 255, 0.15) 10px,
+        transparent 20px,
+        transparent 30px
+    );
+    opacity: 0.05;
+    animation: moveLines 10s linear infinite;
+}
+
+/* Efek Grid Halus */
+.faq-section::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/hexellence.png');
+    opacity: 0.08;
+}
+
+/* Efek Partikel Cahaya */
+.faq-section .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.faq-section .particles div {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(0, 255, 255, 0.7);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: animateParticles 6s infinite ease-in-out;
+}
+
+/* Animasi Garis Cahaya */
+@keyframes moveLines {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100px 100px;
+    }
+}
+
+/* Animasi Partikel */
+@keyframes animateParticles {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-50px) scale(1.5);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Tata Letak Tidak Berubah */
+.faq-container,
+.faq-title,
+.faq-items {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+
+
+/* =========================================================SECTION blog BEROOOO */
+
+.blog-section {
+    background-color: #000;
+    color: #fff;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    letter-spacing: 2px;
+}
+
+.blog-container {
+    display: flex;
+    flex-direction: column; /* Tampilan vertikal */
+    gap: 25px;
+    align-items: center;
+}
+
+.blog-card {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 100, 100, 0.2));
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    text-align: justify;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 800px; /* Lebar card diperbesar */
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+.blog-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #00ffff;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+    text-align: center;
+}
+
+.blog-card .date {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.blog-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Background Futuristik untuk Section Blog */
+.blog-section {
+    background: linear-gradient(135deg, #001F3F, #003366, #000d26);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek Cahaya Grid */
+.blog-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.15) 10%, transparent 70%);
+    opacity: 0.2;
+}
+
+/* Efek Garis Digital */
+.blog-section::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(0, 255, 255, 0.1) 0px,
+        rgba(0, 255, 255, 0.2) 2px,
+        transparent 4px,
+        transparent 8px
+    );
+    opacity: 0.05;
+    animation: moveDigitalLines 8s linear infinite;
+}
+
+/* Efek Partikel Berkedip */
+.blog-section .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.blog-section .particles div {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(0, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: flickerParticles 4s infinite alternate;
+}
+
+/* Animasi Garis Digital */
+@keyframes moveDigitalLines {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 200px 0;
+    }
+}
+
+/* Animasi Partikel Berkedip */
+@keyframes flickerParticles {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+}
+
+/* Pastikan Tata Letak Tidak Berubah */
+.blog-container,
+.blog-title,
+.blog-items {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/* ==================contact us section BEROOOO */
+
+/* General Styles */
+#contact-us {
+    background: radial-gradient(circle, rgba(5, 5, 5, 1) 0%, rgba(20, 20, 20, 1) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    font-family: 'Michroma', sans-serif;
+}
+
+/* Container */
+.contact-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 25px;
+    background: rgba(15, 15, 15, 0.95);
+    border: 1px solid cyan;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    position: relative;
+}
+
+/* Title & Description */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: cyan;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #aaa;
+}
+
+/* Input Fields */
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    padding-left: 35px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px cyan;
+}
+
+/* Input Icons */
+.input-group .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: cyan;
+    font-size: 16px;
+}
+
+/* Button */
+.send-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, cyan, #00ff99);
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: linear-gradient(90deg, #00ff99, cyan);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+}
+
+/* Pop-up Notifikasi */
+/* Pop-up futuristik */
+.popup {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 255, 153, 0.1);
+    border: 2px solid #00ff99;
+    color: #00ff99;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: "Michroma", sans-serif;
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s ease-in-out;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.5);
+    width: 300px;
+    text-align: center;
+}
+
+/* Efek saat pop-up muncul */
+.popup.show {
+    opacity: 1;
+    bottom: 50px;
+}
+
+/* SECTION CONTACT US */
+.contact-section {
+    background: linear-gradient(135deg, #000c1a, #001f33, #002a44) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek Cahaya Neon */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 5%, transparent 70%);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+/* Efek Grid Digital */
+.contact-section::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 255, 0.15) 0px,
+        rgba(0, 255, 255, 0.25) 1px,
+        transparent 5px,
+        transparent 10px
+    );
+    opacity: 0.1;
+    z-index: 1;
+}
+
+/* Animasi Grid Bergerak */
+@keyframes gridMove {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 100px;
+    }
+}
+
+.contact-section::after {
+    animation: gridMove 6s linear infinite;
+}
+
+/* Efek Glitch */
+@keyframes glitch {
+    0% { transform: skewX(0deg); }
+    20% { transform: skewX(10deg); }
+    40% { transform: skewX(-10deg); }
+    60% { transform: skewX(5deg); }
+    80% { transform: skewX(-5deg); }
+    100% { transform: skewX(0deg); }
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #0077ff;
+    animation: glitch 1s infinite alternate;
+}
+
+/* Efek Hologram */
+.hologram-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.8), transparent);
+    top: 20%;
+    opacity: 0.6;
+    animation: hologramMove 3s linear infinite;
+}
+
+@keyframes hologramMove {
+    0% { top: 20%; }
+    50% { top: 50%; }
+    100% { top: 80%; }
+}
+
+/* Pastikan Konten Tetap di Atas */
+.contact-container,
+.contact-title,
+.contact-form {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ==================footer section BEROOOO */
+
+.footer {
+    background: linear-gradient(45deg, #0f0f0f, #1a1a1a);
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Michroma", sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 255, 255, 0.3);
+    filter: blur(80px);
+    z-index: 0;
+    animation: pulse 6s infinite alternate;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+}
+
+.footer p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.footer-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 12px;
+    background: #00ffff;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+    box-shadow: 0px 0px 8px rgba(0, 255, 255, 0.5);
+    margin-bottom: 15px;  /* Menambah jarak bawah */
+}
+
+.footer-btn:hover {
+    background: #00b3b3;
+    transform: scale(1.08);
+    box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.9);
+}
+
+.footer-bottom {
+    margin-top: 20px; /* Menambah jarak atas teks hak cipta */
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+}
+
+@keyframes pulse {
+    from {
+        transform: translate(-50%, -20%);
+        opacity: 0.6;
+    }
+    to {
+        transform: translate(-50%, 20%);
+        opacity: 1;
+    }
+}
+footer {
+    margin-top: 70px; /* Menambah jarak antara Contact Us dan Footer */
+}
+/* ===================================================================================================================================================== paralax navbar BEROOOO */
+/* Efek animasi lipatan kertas */
+.navbar {
+    transform-origin: left center;
+    transform: perspective(800px) rotateY(90deg); /* Mulai dalam keadaan tertutup */
+    transition: transform 1s ease-in-out, box-shadow 0.5s ease-in-out;
+    box-shadow: -10px 0px 20px rgb(0, 255, 255, 0.5); /* Efek bayangan saat tertutup */
+    opacity: 0;
+}
+
+/* Saat halaman dimuat, navbar terbuka dengan efek lipatan */
+body.loaded .navbar {
+    transform: perspective(800px) rotateY(0deg);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5); /* Bayangan lebih soft saat terbuka */
+    opacity: 1;
+}
+
+
+/* ===================================================================================================================================================== paralax section 1 BEROOOO */
+/* ====== ANIMASI MASUK DARI KANAN ====== */
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ====== ANIMASI MASUK DARI KIRI ====== */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ====== GAYA AWAL SEBELUM ANIMASI ====== */
+.home-content .powered-by,
+.home-content h2,
+.home-content h1,
+.home-content p {
+    opacity: 0;
+}
+
+/* ====== ANIMASI KETIKA CLASS .show DITAMBAHKAN ====== */
+.powered-by.show {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+h1.show {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+h2.show {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+p.show {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+@media screen and (max-width: 768px) {
+    .powered-by {
+        display: block !important;  /* Pastikan tetap tampil */
+        font-size: 14px !important; /* Pastikan ukurannya cukup besar */
+        color: #fff !important;     /* Pastikan warna kontras */
+        text-align: center;
+        position: relative !important;
+        z-index: 9999;              /* Pastikan tidak tertutup elemen lain */
+    }
+}
+@media screen and (max-width: 768px) {
+    .powered-by {
+        position: relative !important;
+        z-index: 10; /* Pastikan lebih rendah dari menu */
+    }
+
+    .navbar {
+        position: fixed;
+        z-index: 1000; /* Pastikan lebih tinggi dari powered-by */
+    }
+}
+
+
+/* ===================================================================================================================================================== paralax section services BEROOOO */
+
+
+/* ====== ANIMASI STEMPEL UNTUK H2 ====== */
+@keyframes stampEffect {
+    0% {
+        opacity: 0;
+        transform: scale(2) rotate(-10deg);
+        filter: blur(5px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) rotate(2deg);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* ====== GAYA AWAL SEBELUM ANIMASI ====== */
+.services-title {
+    opacity: 0;
+}
+
+/* ====== ANIMASI KETIKA CLASS .show DITAMBAHKAN ====== */
+.services-title.show {
+    animation: stampEffect 0.6s ease-out forwards; /* Tambahkan forwards */
+}
+
+/* ====== ANIMASI MASUK DARI KANAN (H3 & P) ====== */
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ====== GAYA AWAL SEBELUM ANIMASI ====== */
+.services-title,
+.service h3,
+.service p {
+    opacity: 0;
+}
+
+/* ====== ANIMASI KETIKA CLASS .show DITAMBAHKAN ====== */
+.services-title.show {
+    animation: stampEffect 0.6s ease-out forwards;
+}
+
+.service h3.show {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.service p.show {
+    animation: slideInRight 1s ease-out forwards;
+}
+
+/* ===================================================================================================================================================== paralax section about us BEROOOO */
+/* ====== ANIMASI STEMPEL UNTUK H2 (LEBIH REALISTIS) ====== */
+@keyframes stampEffect {
+    0% {
+        opacity: 0;
+        transform: scale(2.5) rotate(-12deg);
+        filter: blur(8px);
+    }
+    30% {
+        opacity: 0.5;
+        transform: scale(1.2) rotate(3deg);
+        filter: blur(3px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1) rotate(-1deg);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* ====== ANIMASI SLIDE DARI KANAN UNTUK P (LEBIH HALUS) ====== */
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(80px);
+        filter: blur(5px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(20px);
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+/* ====== GAYA AWAL SEBELUM ANIMASI ====== */
+.about-us h2 {
+    opacity: 0;
+    transform: scale(2.5) rotate(-10deg);
+}
+
+.about-us p {
+    opacity: 0;
+    transform: translateX(80px);
+    filter: blur(5px);
+}
+
+/* ====== ANIMASI AKTIF ====== */
+.about-us h2.show {
+    animation: stampEffect 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.about-us p.show {
+    animation: slideInRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* ===================================================================================================================================================== paralax section our team BEROOOO */
+/* ====== ANIMASI STEMPEL UNTUK H2 (REALISTIS) ====== */
+@keyframes stampEffect {
+    0% {
+        opacity: 0;
+        transform: scale(2.5) rotate(-12deg);
+        filter: blur(8px);
+    }
+    30% {
+        opacity: 0.5;
+        transform: scale(1.2) rotate(3deg);
+        filter: blur(3px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1) rotate(-1deg);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* ====== ANIMASI FADE-IN DARI BAWAH UNTUK FOTO TIM ====== */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+        filter: blur(5px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(20px) scale(0.9);
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* ====== ANIMASI SLIDE-IN UNTUK NAMA DAN JABATAN ====== */
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(80px);
+        filter: blur(5px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(20px);
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+/* ====== ANIMASI FADE-IN UNTUK TOMBOL ====== */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+/* ====== GAYA AWAL SEBELUM ANIMASI ====== */
+.team-title {
+    opacity: 0;
+    transform: scale(2.5) rotate(-10deg);
+}
+
+.team-card img {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+}
+
+.team-card h3,
+.team-card p {
+    opacity: 0;
+    transform: translateX(80px);
+}
+
+.contact-button {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* ====== ANIMASI AKTIF ====== */
+.team-title.show {
+    animation: stampEffect 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.team-card img.show {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.team-card h3.show {
+    animation: slideInRight 0.8s ease-out 0.3s forwards;
+}
+
+.team-card p.show {
+    animation: slideInRight 0.8s ease-out 0.5s forwards;
+}
+
+.contact-button.show {
+    animation: fadeIn 0.7s ease-out 0.7s forwards;
+}
+
+/* ===================================================================================================================================================== paralax section rasorces BEROOOO */
+/* ====== ANIMASI STEMPEL UNTUK H2 (REALISTIS) ====== */
+@keyframes stampEffect {
+    0% {
+        opacity: 0;
+        transform: scale(2.5) rotate(-12deg);
+        filter: blur(8px);
+    }
+    30% {
+        opacity: 0.5;
+        transform: scale(1.2) rotate(3deg);
+        filter: blur(3px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1) rotate(-1deg);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* ====== ANIMASI FADE-IN DARI BAWAH UNTUK GAMBAR ====== */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+        filter: blur(5px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(20px) scale(0.9);
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* ====== ANIMASI FADE-IN UNTUK TOMBOL ====== */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+/* ====== GAYA AWAL SEBELUM ANIMASI ====== */
+.section-title {
+    opacity: 0;
+    transform: scale(2.5) rotate(-10deg);
+}
+
+.resource-image {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+}
+
+.cta-button {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* ====== ANIMASI AKTIF ====== */
+.section-title.show {
+    animation: stampEffect 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.resource-image.show {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.cta-button.show {
+    animation: fadeIn 0.7s ease-out 0.7s forwards;
+}
+/* ===================================================================================================================================================== paralax section faq BEROOOO */
+/* ====== ANIMASI STEMPEL UNTUK H2 (REALISTIS) ====== */
+@keyframes stampEffect {
+    0% {
+        opacity: 0;
+        transform: scale(2.5) rotate(-12deg);
+        filter: blur(8px);
+    }
+    30% {
+        opacity: 0.5;
+        transform: scale(1.2) rotate(3deg);
+        filter: blur(3px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1) rotate(-1deg);
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* ====== ANIMASI SLIDE-IN UNTUK PERTANYAAN ====== */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+/* ====== ANIMASI FADE-IN UNTUK JAWABAN ====== */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* ====== GAYA AWAL SEBELUM ANIMASI ====== */
+.faq-title {
+    opacity: 0;
+    transform: scale(2.5) rotate(-10deg);
+}
+
+.faq-question {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.faq-answer {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* ====== ANIMASI AKTIF ====== */
+.faq-title.show {
+    animation: stampEffect 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.faq-question.show {
+    animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.faq-answer.show {
+    animation: fadeInUp 0.4s ease-out forwards;
+    opacity: 1;
+    max-height: 500px;
+}
+/* ===================================================================================================================================================== paralax section blog BEROOOO */
+/* ====== ANIMASI FADE-IN + ZOOM UNTUK JUDUL ====== */
+@keyframes fadeZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.85);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+/* ====== ANIMASI SLIDE-UP + FADE-IN YANG LEBIH PELAN ====== */
+@keyframes smoothSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+        filter: blur(6px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(30px);
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* ====== GAYA AWAL SEBELUM ANIMASI ====== */
+.section-title {
+    opacity: 0;
+    transform: scale(0.85);
+}
+
+.blog-card {
+    opacity: 0;
+    transform: translateY(80px);
+}
+
+/* ====== AKTIFKAN ANIMASI DENGAN DURASI LEBIH PELAN ====== */
+.section-title.show {
+    animation: fadeZoomIn 1.2s ease-out forwards;
+}
+
+.blog-card.show {
+    animation: smoothSlideIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* ====== EFEK HOVER YANG LEBIH HALUS ====== */
+.blog-card {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.06);
+}
+
+.blog-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 4px 16px rgba(0, 255, 255, 0.3);
+}
+
+/* ===================================================================================================================================================== paralax section footer BEROOOO */
+/* Efek glitch hanya untuk teks, tidak memengaruhi tombol */
+@keyframes glitchEffect {
+    0% { text-shadow: 1px 0px 5px rgba(0, 255, 255, 0.5); }
+    50% { text-shadow: -1px 0px 5px rgba(255, 0, 255, 0.5); }
+    100% { text-shadow: 1px 0px 5px rgba(0, 255, 255, 0.5); }
+}
+
+/* Hover futuristik dengan efek glowing */
+.footer-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: rgba(0, 255, 255, 0.2); /* Pastikan tetap terlihat */
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(0, 255, 255, 0.5);
+}
+
+/* Aktifkan glitch hanya pada teks, bukan tombol */
+.footer-btn span {
+    animation: glitchEffect 1.5s infinite alternate;
+}
+
+/* Hover neon futuristik */
+.footer-btn:hover {
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
+    background: rgba(0, 255, 255, 0.4);
+}
+
+/* ===================================================================================================================================================== efek blur pada mobile */
+
+/* ===================================================================================================================================================== crusor BEROOOO */
+.cursor-trail {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(45deg, #00ffff, #ffffff); /* Warna petir */
+    box-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.8), 
+        0 0 20px rgba(0, 255, 255, 0.6), 
+        0 0 30px rgba(0, 255, 255, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: lightningEffect 0.2s ease-out forwards;
+    mix-blend-mode: screen;
+}
+
+@keyframes lightningEffect {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        transform: scale(1.8);
+        opacity: 0.6;
+        filter: hue-rotate(50deg);
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+        filter: hue-rotate(100deg);
+    }
+}
+
+
+    </style>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------ JS paralax navbar BEROO -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.body.classList.add("loaded");
+    }, 300); 
+});
+</script>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------ JS paralax section 1 BEROO -->
+   
+   <script>
+// Fungsi untuk mengecek apakah elemen masuk viewport
+function isElementInViewport(el) {
+    let rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+}
+
+// Fungsi untuk menambahkan class 'show' saat elemen masuk viewport
+function handleScrollAnimations() {
+    let animatedElements = document.querySelectorAll(
+        ".home-content .powered-by, .home-content h1, .home-content h2, .home-content p"
+    );
+
+    animatedElements.forEach((el) => {
+        if (isElementInViewport(el)) {
+            el.classList.add("show");
+        }
+    });
+}
+
+// Jalankan saat scroll dan saat halaman pertama kali dimuat
+window.addEventListener("scroll", handleScrollAnimations);
+document.addEventListener("DOMContentLoaded", handleScrollAnimations);
+
+
+
+
+</script>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------ JS paralax section services BEROO -->
+<script>
+// Fungsi untuk mengecek apakah elemen masuk viewport
+function isElementInViewport(el) {
+    let rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+}
+
+// Fungsi untuk menambahkan class 'show' saat elemen masuk viewport
+function handleScrollAnimations() {
+    let animatedElements = document.querySelectorAll(
+        ".services-title, .service h3, .service p"
+    );
+
+    animatedElements.forEach((el) => {
+        if (isElementInViewport(el)) {
+            el.classList.add("show");
+        }
+    });
+}
+
+// Jalankan saat scroll dan saat halaman pertama kali dimuat
+window.addEventListener("scroll", handleScrollAnimations);
+document.addEventListener("DOMContentLoaded", handleScrollAnimations);
+
+
+
+</script>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------ JS paralax section about us BEROO -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function animateOnScroll() {
+        let aboutSection = document.querySelector(".about-us");
+        let h2 = aboutSection.querySelector("h2");
+        let paragraphs = aboutSection.querySelectorAll("p");
+
+        let sectionPosition = aboutSection.getBoundingClientRect().top;
+        let screenPosition = window.innerHeight / 1.2;
+
+        if (sectionPosition < screenPosition) {
+            h2.classList.add("show");
+            paragraphs.forEach((p, index) => {
+                setTimeout(() => {
+                    p.classList.add("show");
+                }, index * 300); // Memberikan efek lebih smooth antar paragraf
+            });
+        }
+    }
+
+    window.addEventListener("scroll", animateOnScroll);
+    animateOnScroll();
+});
+
+
+</script>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------ JS paralax section our team BEROO -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function animateOnScroll() {
+        let teamSection = document.querySelector(".team-section");
+        let h2 = teamSection.querySelector(".team-title");
+        let teamCards = teamSection.querySelectorAll(".team-card");
+
+        let sectionPosition = teamSection.getBoundingClientRect().top;
+        let screenPosition = window.innerHeight / 1.2;
+
+        if (sectionPosition < screenPosition) {
+            h2.classList.add("show");
+            teamCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.querySelector("img").classList.add("show");
+                    card.querySelector("h3").classList.add("show");
+                    card.querySelector("p").classList.add("show");
+                    card.querySelector(".contact-button").classList.add("show");
+                }, index * 300); // Efek delay antar tim agar lebih smooth
+            });
+        }
+    }
+
+    window.addEventListener("scroll", animateOnScroll);
+    animateOnScroll();
+});
+
+</script>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------ JS paralax section resorces BEROO -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function animateOnScroll() {
+        let resourcesSection = document.querySelector(".resources-section");
+        let h2 = resourcesSection.querySelector(".section-title");
+        let images = resourcesSection.querySelectorAll(".resource-image");
+        let button = resourcesSection.querySelector(".cta-button");
+
+        let sectionPosition = resourcesSection.getBoundingClientRect().top;
+        let screenPosition = window.innerHeight / 1.2;
+
+        if (sectionPosition < screenPosition) {
+            h2.classList.add("show");
+            images.forEach((img, index) => {
+                setTimeout(() => {
+                    img.classList.add("show");
+                }, index * 300); // Efek delay antar gambar
+            });
+            setTimeout(() => {
+                button.classList.add("show");
+            }, 1000); // Delay tombol agar muncul lebih natural
+        }
+    }
+
+    window.addEventListener("scroll", animateOnScroll);
+    animateOnScroll();
+});
+
+</script>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------ JS paralax section faq BEROO -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    function animateOnScroll() {
+        let faqSection = document.querySelector(".faq-section");
+        let h2 = faqSection.querySelector(".faq-title");
+        let questions = faqSection.querySelectorAll(".faq-question");
+
+        let sectionPosition = faqSection.getBoundingClientRect().top;
+        let screenPosition = window.innerHeight / 1.2;
+
+        if (sectionPosition < screenPosition) {
+            h2.classList.add("show");
+            questions.forEach((question, index) => {
+                setTimeout(() => {
+                    question.classList.add("show");
+                }, index * 150);
+            });
+        }
+    }
+
+    // Efek muncul saat scroll
+    window.addEventListener("scroll", animateOnScroll);
+    animateOnScroll();
+
+    // Efek interaktif klik FAQ
+    document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", function () {
+            let answer = this.nextElementSibling;
+            answer.classList.toggle("show");
+        });
+    });
+});
+
+</script>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------ JS paralax section blog BEROO -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function animateOnScroll() {
+        let blogSection = document.querySelector(".blog-section");
+        let h2 = blogSection.querySelector(".section-title");
+        let blogCards = blogSection.querySelectorAll(".blog-card");
+
+        let sectionPosition = blogSection.getBoundingClientRect().top;
+        let screenPosition = window.innerHeight / 1.3;
+
+        if (sectionPosition < screenPosition) {
+            h2.classList.add("show");
+
+            blogCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add("show");
+                }, index * 400); // Delay lebih panjang untuk efek lebih smooth
+            });
+        }
+    }
+
+    window.addEventListener("scroll", animateOnScroll);
+    animateOnScroll();
+});
+
+
+</script>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------------ JS paralax section footer BEROO -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function showFooterOnScroll() {
+        let footer = document.querySelector(".footer");
+        let position = footer.getBoundingClientRect().top;
+        let screenHeight = window.innerHeight;
+
+        if (position < screenHeight - 50) {
+            footer.classList.add("show");
+        }
+    }
+
+    window.addEventListener("scroll", showFooterOnScroll);
+    showFooterOnScroll();
+});
+
+
+</script>
+<!------------------------------------------------------------------------------------------------------------------------------------------------------ JS crusor BEROO -->
+<script>
+document.addEventListener("mousemove", function (e) {
+    for (let i = 0; i < 2; i++) { // Membuat 2 percikan petir per gerakan
+        const trail = document.createElement("div");
+        trail.classList.add("cursor-trail");
+        document.body.appendChild(trail);
+
+        // Posisi sedikit acak untuk efek cabang petir
+        let offsetX = (Math.random() - 0.5) * 15;
+        let offsetY = (Math.random() - 0.5) * 15;
+        
+        trail.style.left = `${e.clientX + offsetX}px`;
+        trail.style.top = `${e.clientY + offsetY}px`;
+
+        setTimeout(() => {
+            trail.remove();
+        }, 200); // Petir menghilang dalam 0.2 detik
+    }
+});
+
+
+</script>
+
+
+</head>
+<body>
+    <div class="menu-button" onclick="toggleMenu()">
+        <span style="color: #00ffff; font-size: 2rem;">☰</span>
+    </div>
+
+    <div class="navbar">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about-us" class="nav-link">About Us</a>
+        <a href="#our-team" class="nav-link">Our Team</a>
+        <a href="#resources" class="nav-link">Resources</a>
+        <a href="#faq" class="nav-link">Frequently Asked Question</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contact-us" class="nav-link">Contact Us</a>
+    </div>
+    <div id="home" class="home-section">
+        <div class="home-content">
+            <div class="powered-by">Powered by Project1998 (X) AKR</div>
+            <h1>Welcome to the</h1>
+            <h2>Venom Network</h2>
+            <p>Jelajahi bagaimana teknologi kami merevolusi cara Anda mengelola lalu lintas dan meningkatkan efisiensi dengan trafik palsu. Bergabunglah dengan komunitas kami dan rasakan pengalaman baru yang inovatif!</p>
+            <a href="#resources" class="btn">Read More</a>
+        </div>
+    
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home" class="nav-link" onclick="toggleMenu()">Home</a>
+            <a href="#services" class="nav-link" onclick="toggleMenu()">Services</a>
+            <a href="#about-us" class="nav-link" onclick="toggleMenu()">About Us</a>
+            <a href="#our-team" class="nav-link" onclick="toggleMenu()">Our Team</a>
+            <a href="#resources" class="nav-link" onclick="toggleMenu()">Resources</a>
+            <a href="#faq" class="nav-link" onclick="toggleMenu()">Frequently Asked Question</a>
+            <a href="#blog" class="nav-link" onclick="toggleMenu()">Blog</a>
+            <a href="#contact-us" class="nav-link" onclick="toggleMenu()">Contact Us</a>
+        </div>
+
+    </div>
+    <div id="services"class="services-section">
+        <h2 class="services-title">Services</h2>
+
+        <div class="services-container">
+            <div class="service"><h3>Ekspansi Browser ​Pencari Trafik</h3><p>Menawarkan lebih banyak ​pilihan ​browser untuk ​meningkatkan fleksibilitas dalam pengelolaan trafik.</p></div>
+            <div class="service"><h3>Keamanan Tanpa Kebocoran IP</h3><p>Perlindungan maksimal ​terhadap ​kebocoran IP, ​memastikan anonimitas ​​penuh dalam setiap ​aktivitas.</p></div>
+            <div class="service"><h3>Dukungan Komprehensif ​Proxy IPv4 dan IPv6</h3><p>Mengintegrasikan ​dukungan penuh ​untuk ​proxy IPv4 dan IPv6, ​​memberikan ​fleksibilitas dan ​​kompatibilitas yang ​lebih luas.</p></div>
+            <div class="service"><h3>Unlimited IP</h3><p>Memberikan kebebasan ​penuh dengan ​akses tak ​terbatas ke jaringan ​IP, memungkinkan ​strategi trafik yang ​​lebih dinamis dan ​efektif.</p></div>
+            <div class="service"><h3>Spoofing Timezone dan Realtime Timezone</h3><p>Kemampuan untuk ​menyesuaikan dan ​​menyamarkan zona waktu ​dengan ​akurasi real-​time, menjaga ​​keautentikan aktivitas ​online.</p></div> 
+            <div class="service"><h3>User Agent Device Terbaru dan ​Unlimited</h3><p>Menggunakan user agent ​terbaru ​dengan pilihan ​yang tidak terbatas, ​​memastikan ​kompatibilitas dengan ​​berbagai perangkat.</p></div>
+            <div class="service"><h3>Login dengan Akses Token</h3><p>Keamanan ekstra ​dengan sistem login ​​berbasis akses ​token, memastikan ​​hanya pengguna yang ​sah yang dapat ​​mengakses.</p></div>
+            <div class="service"><h3>Update IP dan User Agent ​Bulanan</h3><p>Pembaruan rutin ​setiap bulan untuk IP ​​dan user agent, ​menjaga performa dan ​​keamanan aplikasi ​tetap optimal.</p></div>
+            <div class="service"><h3>Lisensi Bulanan yang ​Fleksibel</h3><p>Penawaran lisensi ​bulanan yang ​​fleksibel, memberikan kemudahan ​dalam ​mengelola penggunaan ​sesuai ​kebutuhan.</p></div>
+            <div class="service"><h3>Update dan Inject Link ​​Terjangkau</h3><p>Menyediakan layanan ​update dan ​inject link ​dengan biaya yang ​​terjangkau, menjaga ​efisiensi ​anggaran ​tanpa mengorbankan ​​kualitas.</p></div> 
+            <div class="service"><h3>Konsultasi Tanpa Biaya</h3><p>Mendapatkan dukungan ​dari tim ahli ​melalui ​konsultasi gratis, ​memastikan ​Anda ​mendapatkan solusi ​terbaik ​untuk setiap ​tantangan yang ​dihadapi.</p></div>
+            <div class="service"><h3>Bimbingan Intensif hingga Ahli</h3><p>Program bimbingan ​intensif yang ​dirancang ​untuk membantu pengguna ​​mencapai tingkat ​keahlian yang ​​diinginkan.</p></div>
+            <div class="service"><h3>Kolaborasi dengan Tim ​Ahli</h3><p>Membangun hubungan erat ​dengan ​tim profesional ​berpengalaman, ​​memberikan akses ke ​pengetahuan ​dan solusi ​terbaik.</p></div>
+            <div class="service"><h3>Akses Eksklusif ke ​Informasi ​R&D Terbaru</h3><p>Akses eksklusif ke ​informasi terbaru ​dari ​departemen Research and ​​Development, memastikan ​Anda ​selalu selangkah ​lebih maju.</p></div>
+            <div class="service"><h3>Keamanan dan Privasi ​​Terjamin</h3><p>Menawarkan lebih banyak ​pilihan ​browser untuk ​meningkatkan ​​fleksibilitas dalam ​pencarian dan ​​pengelolaan trafik.</p></div> 
+            <div class="service"><h3>free SSD Card 240GB</h3><p>Penawaran eksklusif SSD ​card 240GB ​sebagai ​bagian dari paket ​layanan ​kami, mendukung ​kinerja aplikasi ​Anda.</p></div> 
+            <div class="service"><h3>Pengembangan Berkala</h3><p>Pembaruan dan ​peningkatan fitur ​​secara berkala, ​memastikan aplikasi ​​tetap relevan dan ​sesuai dengan ​kebutuhan ​pasar.</p></div> 
+            <div class="service"><h3>Menjadi Bagian dari Keluarga ​Kami</h3><p>Bergabunglah dengan ​komunitas kami ​yang ​penuh dengan semangat ​​kemanusiaan yang adil ​dan beradab, ​di mana ​setiap anggota dihargai ​dan ​didukung.</p></div> 
+        </div>
+    </div>
+
+    <!-- section about us -->
+
+    <!-- About Us Section -->
+<section id="about-us"class="about-us">
+    <div class="about-content">
+        <h2>About Us</h2>
+        <p>
+            Inovasi dan teknologi bertemu untuk menghadirkan solusi yang efektif dalam dunia digital. ​Kami adalah tim yang berkomitmen ​untuk menyediakan alat yang mengubah cara melihat ​dan mengelola trafik. Dengan memanfaatkan teknologi terkini dan pendekatan ​berbasis ​data, kami memberikan solusi yang dirancang untuk memenuhi kebutuhan spesifik, sambil ​menjaga integritas dan ​keakuratan.
+Kami adalah bagian dari Project1998 Environment Group, sebuah ekosistem inovatif yang berfokus pada pengembangan teknologi cerdas untuk solusi digital yang lebih efektif dan berkelanjutan.
+        </p>
+        <p>
+            Platform kami menawarkan kemudahan dan fleksibilitas dalam pengelolaan trafik, ​memungkinkan Anda untuk fokus pada strategi dan ​pengembangan tanpa terjebak dalam ​kompleksitas teknis. Kami memahami bahwa dalam dunia yang semakin terhubung ini, ​data dan ​analitik memainkan peran kunci dalam strategi pemasaran dan pengembangan ​bisnis. Oleh karena itu, kami menggabungkan keahlian ​teknis dengan pemahaman ​mendalam tentang kebutuhan pasar untuk menghadirkan produk yang tidak hanya ​memenuhi, tetapi melampaui ​harapan.
+        </p>
+        <p>
+            Dengan VENOM NETWORK, Tidak hanya mendapatkan alat untuk menciptakan trafik, tetapi juga ​sebuah kemitraan yang didasarkan pada ​kepercayaan dan integritas. Kami berdedikasi ​untuk memberikan layanan terbaik dan mendukung Anda setiap langkah, dari ​​implementasi hingga analisis hasil. Temukan potensi baru dalam strategi Anda bersama ​kami dan rasakan perbedaan yang dapat ​dibuat oleh teknologi yang tepat.
+        </p>
+    </div>
+</section>
+
+
+    <!-- OUR TEMA Section -->
+    <section id="our-team" class="team-section">
+        <h2 class="team-title">OUR TEAM</h2>
+        <div class="team-container">
+            <div class="team-card">
+                <div class="team-frame">
+                    <img src="agung.jpeg" alt="Agung" class="team-photo">
+                </div>
+                <h3>Agung</h3>
+                <p>Founder & Chief Innovation Officer</p>
+                <a href="https://t.me/lauradesner" class="contact-button">HUBUNGI SAYA</a>
+            </div>
+    
+            <div class="team-card">
+                <div class="team-frame">
+                    <img src="wongapak.jpeg" alt="Wong Apak" class="team-photo">
+                </div>
+                <h3>WongNgapak</h3>
+                <p>Founder & Lead Researcher</p>
+                <a href="https://t.me/WongNgapak98" class="contact-button">HUBUNGI SAYA</a>
+            </div>
+    
+            <div class="team-card">
+                <div class="team-frame">
+                    <img src="quenra57.jpeg" alt="Quenra57" class="team-photo">
+                </div>
+                <h3>QueenRA57</h3>
+                <p>Founder & Chief Executive Officer </p>
+                <a href="https://t.me/RA57RA57" class="contact-button">HUBUNGI SAYA</a>
+            </div>
+        </div>
+    </section>
+    
+    
+        <!-- RESOURCES Section -->
+    
+        <section id="resources" class="resources-section">
+            <h2 class="section-title">RESOURCES</h2>
+            <div class="resources-container">
+                <div class="resource-item">
+                    <img src="login.png" alt="Login Interface" class="resource-image">
+                </div>
+                <div class="resource-item">
+                    <img src="louncher.png" alt="Launcher Interface" class="resource-image">
+                </div>
+            </div>
+            <div class="button-container">
+                <a href="https://youtu.be/u-gz5NffPPU?si=9yOfEn_DrNJH3xSw" target="_blank" class="cta-button">LIHAT TOOLS</a>
+            </div>
+        </section>
+        
+
+
+        <!-- frequntly asked questions Section -->
+        <section id="faq" class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Apakah trafik yang dihasilkan oleh aplikasi ini terlihat alami?</div>
+                    <div class="faq-answer">
+                        Ya, trafik yang dihasilkan dirancang untuk menyerupai perilaku pengguna yang sebenarnya, 
+                        sehingga terlihat lebih alami dan tidak merugikan reputasi situs kencan Anda.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apakah ada tutorial atau panduan untuk ​menggunakan aplikasi ​ini?</div>
+                    <div class="faq-answer">
+                        Kami menyediakan panduan dan tutorial lengkap untuk membantu Anda memahami cara menggunakan aplikasi ini. 
+                        Jika Anda membutuhkan bantuan lebih lanjut atau memiliki pertanyaan spesifik, jangan ragu untuk menghubungi tim kami.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apakah aplikasi ini kompatibel dengan semua situs kencan?</div>
+                    <div class="faq-answer">
+                        Aplikasi kami dirancang untuk berfungsi dengan berbagai situs kencan, tetapi hasil dan fungsionalitasnya dapat 
+                        bervariasi tergantung pada pengaturan masing-masing situs.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apakah aplikasi ini tersedia di perangkat seluler?</div>
+                    <div class="faq-answer">
+                        Saat ini, aplikasi ini hanya tersedia untuk perangkat Windows. Kami fokus pada pengembangan fitur dan kinerja di platform ini, 
+                        dan belum memiliki versi untuk perangkat seluler.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Dapatkah saya menggunakan aplikasi ini ​untuk lebih dari satu ​situs kencan?</div>
+                    <div class="faq-answer">
+                        Ya, aplikasi kami memungkinkan Anda untuk ​menghasilkan trafik untuk beberapa situs ​kencan ​sekaligus, 
+                        sehingga Anda dapat mengelola berbagai ​platform dengan lebih ​efisien.
+                    </div>
+                    
+                
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Apakah aplikasi ini mengumpulkan data ​pribadi saya?</div>
+                    <div class="faq-answer">
+                        Kami menghormati privasi pengguna. Aplikasi kami ​hanya mengumpulkan data yang ​diperlukan untuk fungsi ​operasional dan analisis, dan kami tidak membagikan ​data ​pribadi Anda kepada pihak ketiga.
+
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apakah data saya aman saat menggunakan ​aplikasi ini?</div>
+                    <div class="faq-answer">
+                        Kami mengutamakan keamanan data pengguna dengan ​langkah-langkah perlindungan l​ainnya untuk ​memastikan bahwa informasi Anda tetap aman dan tidak ​dibagikan kepada p​ihak ketiga.
+
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apakah aplikasi ini kompatibel dengan ​semua situs kencan?</div>
+                    <div class="faq-answer">
+                        Kami mengutamakan keamanan data pengguna dengan ​langkah-langkah perlindungan l​ainnya untuk ​memastikan bahwa informasi Anda tetap aman dan tidak ​dibagikan kepada p​ihak ketiga.
+
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apakah ada risiko menggunakan aplikasi ini?</div>
+                    <div class="faq-answer">
+                        Kami telah merancang aplikasi kami untuk ​meminimalkan risiko, tetapi pengguna harus ​tetap ​mematuhi kebijakan dan ketentuan penggunaan dari ​situs kencan masing-masing ​untuk menghindari ​masalah.
+
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Apakah ada batasan usia untuk ​menggunakan aplikasi ini?</div>
+                    <div class="faq-answer">
+                        Pengguna harus berusia minimal 18 tahun untuk ​menggunakan aplikasi kami, sesuai ​dengan kebijakan ​sebagian besar situs kencan. Pastikan untuk mematuhi ​aturan yang ​berlaku.
+
+                    </div>
+                    
+                
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Bagaimana jika saya mengalami masalah ​teknis saat menggunakan ​aplikasi?</div>
+                    <div class="faq-answer">
+                        Jika Anda mengalami masalah teknis, silakan hubungi ​tim dukungan pelanggan kami. ​Kami siap membantu ​menyelesaikan masalah yang Anda hadapi secepat ​mungkin.
+
+                    </div>
+                </div>
+
+                    
+                
+            </div>
+        </section>
+
+
+
+        
+                <!-- blog Section -->
+
+                <section id="blog" class="blog-section">
+                    <div class="container">
+                        <h2 class="section-title">Blog</h2>
+                        <div class="blog-container">
+                            <div class="blog-card">
+                                <h3>Kini Mendukung Trafik Internasional</h3>
+                                <span class="date">22 Agustus 2024</span>
+                                <p>
+                                    Kami dengan bangga mengumumkan peluncuran fitur terbaru ​yang ​memungkinkan aplikasi kami untuk menciptakan trafik ​palsu dari ​berbagai negara di seluruh dunia. Fitur ini dirancang ​untuk ​membantu pengguna yang menargetkan audiens ​internasional dan ​ingin meningkatkan visibilitas situs kencan ​mereka di berbagai ​pasar global.
+                                </p>
+                                <p>
+                                    Dengan dukungan trafik internasional, Anda dapat ​​menyesuaikan strategi pemasaran Anda untuk berbagai ​​wilayah, meningkatkan relevansi dan efektivitas kampanye ​​Anda.
+                                </p>
+                            </div>
+                
+                            <div class="blog-card">
+                                <h3>Studi Kasus: Bagaimana Aplikasi Kami ​Membantu ​Situs Kencan Lokal Meningkatkan ​Trafik hingga ​150%</h3>
+                                <span class="date">8 Agustus 2024</span>
+                                <p>
+                                    Dalam studi kasus terbaru ini, kami melihat bagaimana ​aplikasi ​kami berhasil membantu sebuah situs kencan lokal ​meningkatkan ​trafik mereka hingga 150% dalam waktu kurang ​dari tiga bulan. ​Dengan menggunakan fitur canggih dari ​aplikasi kami, situs ​tersebut berhasil menarik lebih banyak ​pengguna dan ​meningkatkan interaksi di platform mereka.
+                                </p>
+                                <p>
+                                    Baca lebih lanjut tentang strategi yang digunakan dan ​bagaimana ​Anda juga bisa mencapai hasil yang serupa.
+                                </p>
+                            </div>
+                
+                            <div class="blog-card">
+                                <h3>Transformasi Digital: Fitur Predictive Analytics Kini Tersedia untuk Optimasi Trafik Anda</h3>
+                                <span class="date">1 Agustus 2024</span>
+                                <p>
+                                    Kami dengan bangga memperkenalkan fitur terbaru dalam ​aplikasi ​kami: Predictive Analytics. Fitur ini dirancang untuk ​membantu ​Anda memprediksi dan mengoptimalkan trafik ​situs kencan Anda ​dengan menggunakan analisis data yang ​canggih. Dengan kemampuan ​ini, Anda dapat mengantisipasi ​tren pengguna, mengatur strategi ​pemasaran yang lebih ​tepat, dan meningkatkan efektivitas ​kampanye Anda secara ​keseluruhan.
+                                </p>
+                                <p>
+                                    Predictive Analytics memungkinkan Anda untuk mengambil ​langkah ​proaktif dalam mengelola trafik, memastikan bahwa ​situs Anda ​selalu berada di garis depan dalam menarik dan ​mempertahankan ​pengguna.
+                                </p>
+                            </div>
+                            <div class="blog-card">
+                                <h3>Panduan Utama: Mengoptimalkan Trafik dengan ​​Aplikasi Kami</h3>
+                                <span class="date">18 Agustus 2024</span>
+                                <p>
+                                    Mengoptimalkan trafik situs kencan Anda adalah kunci untuk ​​meningkatkan interaksi pengguna dan keberhasilan platform ​Anda. ​Dalam panduan ini, kami membahas cara ​memaksimalkan potensi ​aplikasi kami untuk menciptakan ​trafik yang realistis dan ​efektif. Kami juga memberikan tips dan ​strategi yang dapat ​membantu Anda mengarahkan trafik ke ​halaman-halaman penting dan ​meningkatkan konversi.
+                                </p>
+                                <p>
+                                    Jangan lewatkan panduan ini untuk mendapatkan hasil ​terbaik ​dari aplikasi Anda.
+                                </p>
+                            </div>
+                            <div class="blog-card">
+                                <h3>Mengapa Trafik Palsu Dapat Membantu ​Meningkatkan ​Visibilitas dan Konversi di Situs ​Kencan</h3>
+                                <span class="date">28 Juli 2024</span>
+                                <p>
+                                    Dalam artikel ini, kami membahas peran trafik palsu dalam ​​meningkatkan visibilitas dan konversi di situs kencan. ​Meskipun ​sering dianggap kontroversial, trafik palsu yang ​dikelola ​dengan baik dapat membantu situs kencan terlihat ​lebih aktif ​dan menarik lebih banyak pengguna asli.
+                                </p>
+                                <p>
+                                    Kami juga menjelaskan bagaimana aplikasi kami dirancang ​untuk ​memastikan trafik palsu yang dibuat tetap relevan dan ​efektif ​tanpa merusak kredibilitas platform Anda.
+                                </p>
+                            </div>
+                            <div class="blog-card">
+                                <h3>Kemitraan Baru: Kami Bekerja Sama dengan ​Platform ​Kencan Terkemuka</h3>
+                                <span class="date">12 Agustus 2024</span>
+                                <p>
+                                    Kami dengan senang hati mengumumkan kemitraan baru ​kami dengan ​beberapa platform kencan terkemuka. Kerja ​sama ini memungkinkan ​integrasi yang lebih mulus antara ​aplikasi kami dan situs-situs ​kencan tersebut, sehingga ​pengguna dapat dengan mudah mengelola ​dan ​mengoptimalkan trafik di beberapa platform sekaligus.
+                                </p>
+                                <p>
+                                    Kerja sama ini adalah langkah besar dalam memperkuat ​ekosistem ​digital dan memberikan lebih banyak nilai bagi ​pengguna kami.
+                                </p>
+                            </div>
+                            <div class="blog-card">
+                                <h3>Pembaruan Keamanan: Kami Meningkatkan ​​Perlindungan Data Pengguna</h3>
+                                <span class="date">5 Agustus 2024</span>
+                                <p>
+                                    Keamanan data pengguna adalah prioritas utama kami. Oleh ​karena ​itu, kami baru saja meluncurkan pembaruan ​keamanan terbaru ​untuk aplikasi kami. Pembaruan ini ​mencakup data yang lebih ​kuat dan perlindungan tambahan ​terhadap ancaman, memastikan b​ahwa informasi pengguna ​tetap aman dan terlindungi.
+                                </p>
+                                <p>
+                                    K​ami terus berkomitmen untuk menjaga kepercayaan ​pengguna d​engan menyediakan aplikasi yang tidak hanya ​efektif tetapi j​uga aman.
+                                </p>
+                            </div>
+                            <div class="blog-card">
+                                <h3>Melihat Masa Depan: Rencana Kami untuk ​​Pengembangan Fitur Baru</h3>
+                                <span class="date">22 Juli 2024</span>
+                                <p>
+                                    Saat kami menatap ke masa depan, kami ingin berbagi ​rencana ​pengembangan fitur baru untuk aplikasi kami. Kami ​sedang ​bekerja keras untuk mengembangkan fitur-fitur baru ​yang akan ​semakin meningkatkan kemampuan aplikasi kami ​dalam menciptakan ​trafik yang lebih canggih dan adaptif.
+                                </p>
+                                <p>
+                                    Tetaplah terhubung dengan kami untuk mendapatkan ​pembaruan ​terbaru tentang inovasi dan pengembangan yang ​akan datang.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </section>
+                
+
+                <!-- contact us section -->
+
+                <section id="contact-us" class="contact-section">
+
+                    <div class="contact-container">
+                        <h2>Contact Us</h2>
+                        <p class="description">Tim kami akan menghubungi Anda kembali melalui Telegram, WhatsApp, atau Email guna menindaklanjuti komunikasi secara efektif dan profesional.</p>
+                        
+                        <form id="contactForm">
+                            <div class="input-group">
+                                <input type="text" id="name" placeholder="Nama" required>
+                                <span class="icon">👤</span>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="email" placeholder="Email" required>
+                                <span class="icon">✉️</span>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" id="telegram" placeholder="Username Telegram">
+                                <span class="icon">📢</span>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" id="whatsapp" placeholder="Nomor WhatsApp">
+                                <span class="icon">📱</span>
+                            </div>
+                            <div class="input-group">
+                                <textarea id="message" placeholder="Pesan" required></textarea>
+                                <span class="icon">📝</span>
+                            </div>
+                            <button type="submit" class="send-btn">🚀 Kirim Pesan</button>
+                        </form>
+                    </div>
+                
+                    <!-- Pop-up Notifikasi -->
+                    <div id="popupMessage" class="popup">
+                        <div class="popup-container">
+                            <p id="popupText"></p>
+                        </div>
+                    </div>
+                    
+                
+                
+                    <!-- section footer beroo -->
+                
+                    <footer class="footer">
+                        <div class="footer-content">
+                            <p>&copy; 2025 Venom Network. All Rights Reserved.</p>
+                            <a href="https://t.me/Bulldokk" class="footer-btn">
+                                Dibuat oleh BULDOKK dengan cinta dan seribu harapan
+                            </a>
+                        </div>
+                    </footer>
+                    
+                    
+                    
+                
+                
+                
+                
+
+
+</body>
+        <!-- JS NGGO MOBILE -->
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById('mobileMenu');
+        var menuButton = document.getElementById('menuButton');
+        menu.classList.toggle('active');
+        menuButton.classList.toggle('hidden');
+    }
+</script>
+
+        <!-- JS NGGO FAQ -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+        item.addEventListener("click", function () {
+            this.classList.toggle("active");
+        });
+    });
+});
+
+        </script>
+
+            <!-- JS NGGO contact us -->
+
+
+            <script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Ambil nilai dari input form
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let telegram = document.getElementById("telegram").value || "Tidak diisi";
+    let whatsapp = document.getElementById("whatsapp").value || "Tidak diisi";
+    let message = document.getElementById("message").value;
+
+    // Validasi dasar
+    if (!name || !email || !message) {
+        showPopup("Harap isi semua kolom yang wajib!", false);
+        return;
+    }
+
+    // Format pesan ke Telegram
+    let telegramMessage = `🔹 Nama: ${name}%0A🔹 Email: ${email}%0A🔹 Telegram: ${telegram}%0A🔹 WhatsApp: ${whatsapp}%0A🔹 Pesan: ${message}`;
+
+    let apiURL = `https://api.telegram.org/bot8026599853:AAFhkoIAXxAkK8b2qzqeqKEOSH5zhsj10v4/sendMessage?chat_id=-1002432367304&text=${telegramMessage}`;
+
+    // Kirim ke Telegram
+    fetch(apiURL)
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                showPopup("Pesan berhasil dikirim!", true);
+                document.getElementById("contactForm").reset();
+            } else {
+                showPopup("Gagal mengirim pesan. Coba lagi.", false);
+            }
+        })
+        .catch(error => showPopup("Terjadi kesalahan, periksa koneksi internet.", false));
+});
+
+// Fungsi untuk menampilkan pop-up
+function showPopup(message, isSuccess) {
+    let popup = document.getElementById("popupMessage");
+    let popupText = document.getElementById("popupText");
+
+    popupText.innerText = message;
+    popup.style.backgroundColor = isSuccess ? "#00ff99" : "#ff4444"; // Hijau untuk sukses, merah untuk gagal
+    popup.classList.add("show");
+
+    // Sembunyikan setelah 3 detik
+    setTimeout(() => {
+        popup.classList.remove("show");
+    }, 3000);
+}
+                </script>
+
+<script>
+    document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // Mencegah perilaku default
+
+        const targetId = this.getAttribute('href').substring(1); // Ambil ID tujuan
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 50, // Sesuaikan agar tidak tertutup navbar
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+</script>
+
+    
+                
+                
+</html>
